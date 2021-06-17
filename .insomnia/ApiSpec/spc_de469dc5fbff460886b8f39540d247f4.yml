@@ -1,7 +1,7 @@
 _id: spc_de469dc5fbff460886b8f39540d247f4
 type: ApiSpec
 parentId: wrk_67289a28569c441eb8bf275ffbd0685e
-modified: 1623920215060
+modified: 1623926512366
 created: 1623918812846
 fileName: OpenAtlas API 0.2-develop
 contents: >-
@@ -9,11 +9,7 @@ contents: >-
     "servers" : [ {
       "description" : "Demo Dev Server",
       "url" : "https://demo-dev.openatlas.eu"
-    },
-    {
-      "description" : "Demo Server",
-      "url" : "https://demo.openatlas.eu"
-    }],
+    } ],
     "components" : {
       "parameters" : {
         "columnParam" : {
@@ -64,6 +60,15 @@ contents: >-
           "name" : "first",
           "schema" : {
             "type" : "number"
+          }
+        },
+        "formatParam" : {
+          "description" : "Select to which output format is prefered",
+          "in" : "query",
+          "name" : "format",
+          "schema" : {
+            "enum" : [ "linked_places", "geojson" ],
+            "type" : "string"
           }
         },
         "langParam" : {
@@ -405,26 +410,6 @@ contents: >-
           },
           "type" : "object"
         },
-        "PaginationModel" : {
-          "properties" : {
-            "entities" : {
-              "type" : "number"
-            },
-            "entitiesPerPage" : {
-              "type" : "number"
-            },
-            "index" : {
-              "items" : {
-                "$ref" : "#/components/schemas/PaginationIndexModel"
-              },
-              "type" : "array"
-            },
-            "totalPages" : {
-              "type" : "number"
-            }
-          },
-          "type" : "object"
-        },
         "RelationModel" : {
           "properties" : {
             "label" : {
@@ -536,17 +521,6 @@ contents: >-
           },
           "type" : "object"
         },
-        "UsageModel" : {
-          "properties" : {
-            "examples" : {
-              "type" : "string"
-            },
-            "message" : {
-              "type" : "string"
-            }
-          },
-          "type" : "object"
-        },
         "WhenModel" : {
           "properties" : {
             "timespans" : {
@@ -575,97 +549,6 @@ contents: >-
     },
     "openapi" : "3.0.2",
     "paths" : {
-      "/api/0.2/" : {
-        "get" : {
-          "responses" : {
-            "200" : {
-              "content" : {
-                "application/ld+json" : {
-                  "schema" : {
-                    "$ref" : "#/components/schemas/UsageModel"
-                  }
-                }
-              },
-              "description" : "List of API Options"
-            },
-            "404" : {
-              "description" : "Something went wrong. Please consult the error message."
-            }
-          },
-          "summary" : "Usage endpoint\r",
-          "tags" : [ "Usage" ]
-        }
-      },
-      "/api/0.2/class/" : {
-        "get" : {
-          "responses" : {
-            "200" : {
-              "content" : {
-                "application/ld+json" : {
-                  "schema" : {
-                    "$ref" : "#/components/schemas/UsageModel"
-                  }
-                }
-              },
-              "description" : "List of API Options"
-            },
-            "404" : {
-              "description" : "Something went wrong. Please consult the error message."
-            }
-          },
-          "summary" : "Usage endpoint\r",
-          "tags" : [ "Usage" ]
-        }
-      },
-      "/api/0.2/class/{class_code}" : {
-        "get" : {
-          "description" : "Retrieves a json with a list of entities based on their CIDOC CRM class code. The json contains a **result** and **pagination** key. All in OpenAtlas available codes can be found under `https://redmine.craws.net/projects/uni/wiki/OpenAtlas_and_CIDOC_CRM_class_mapping`. The result can also be filtered, ordered and manipulated through different parameters. By default results are orderd alphabetically and 20 entities are shown.",
-          "parameters" : [ {
-            "description" : "Need to be a valid CIDOC CRM class code (e.g. E21, E18, E33)",
-            "in" : "path",
-            "name" : "class_code",
-            "required" : true,
-            "schema" : {
-              "type" : "string"
-            }
-          }, {
-            "$ref" : "#/components/parameters/limitParam"
-          }, {
-            "$ref" : "#/components/parameters/columnParam"
-          }, {
-            "$ref" : "#/components/parameters/sortParam"
-          }, {
-            "$ref" : "#/components/parameters/filterParam"
-          }, {
-            "$ref" : "#/components/parameters/firstParam"
-          }, {
-            "$ref" : "#/components/parameters/lastParam"
-          }, {
-            "$ref" : "#/components/parameters/showParam"
-          }, {
-            "$ref" : "#/components/parameters/countParam"
-          }, {
-            "$ref" : "#/components/parameters/downloadParam"
-          } ],
-          "responses" : {
-            "200" : {
-              "content" : {
-                "application/ld+json" : {
-                  "schema" : {
-                    "$ref" : "#/components/schemas/OutputModel"
-                  }
-                }
-              },
-              "description" : "A json with a list of results and pagination information"
-            },
-            "404" : {
-              "description" : "Something went wrong. Please consult the error message."
-            }
-          },
-          "summary" : "Classes endpoint\r",
-          "tags" : [ "Entities" ]
-        }
-      },
       "/api/0.2/classes/" : {
         "get" : {
           "description" : "Provides a list of all available system classes, their CIDOC CRM mapping, which view they belong, which icon is used and the englisch name",
@@ -686,27 +569,6 @@ contents: >-
           },
           "summary" : "Class Mapping endpoint\r",
           "tags" : [ "Content" ]
-        }
-      },
-      "/api/0.2/code/" : {
-        "get" : {
-          "responses" : {
-            "200" : {
-              "content" : {
-                "application/ld+json" : {
-                  "schema" : {
-                    "$ref" : "#/components/schemas/UsageModel"
-                  }
-                }
-              },
-              "description" : "List of API Options"
-            },
-            "404" : {
-              "description" : "Something went wrong. Please consult the error message."
-            }
-          },
-          "summary" : "Usage endpoint\r",
-          "tags" : [ "Usage" ]
         }
       },
       "/api/0.2/code/{code}" : {
@@ -739,6 +601,8 @@ contents: >-
             "$ref" : "#/components/parameters/countParam"
           }, {
             "$ref" : "#/components/parameters/downloadParam"
+          }, {
+            "$ref" : "#/components/parameters/formatParam"
           } ],
           "responses" : {
             "200" : {
@@ -786,27 +650,6 @@ contents: >-
           "tags" : [ "Content" ]
         }
       },
-      "/api/0.2/entity/" : {
-        "get" : {
-          "responses" : {
-            "200" : {
-              "content" : {
-                "application/ld+json" : {
-                  "schema" : {
-                    "$ref" : "#/components/schemas/UsageModel"
-                  }
-                }
-              },
-              "description" : "List of API Options"
-            },
-            "404" : {
-              "description" : "Something went wrong. Please consult the error message."
-            }
-          },
-          "summary" : "Usage endpoint\r",
-          "tags" : [ "Usage" ]
-        }
-      },
       "/api/0.2/entity/{id_}" : {
         "get" : {
           "description" : "Retrieves a geojson representations of an entity through the **id**.",
@@ -824,6 +667,8 @@ contents: >-
             "$ref" : "#/components/parameters/downloadParam"
           }, {
             "$ref" : "#/components/parameters/exportParam"
+          }, {
+            "$ref" : "#/components/parameters/formatParam"
           } ],
           "responses" : {
             "200" : {
@@ -844,27 +689,6 @@ contents: >-
           "tags" : [ "Entities" ]
         }
       },
-      "/api/0.2/latest/" : {
-        "get" : {
-          "responses" : {
-            "200" : {
-              "content" : {
-                "application/ld+json" : {
-                  "schema" : {
-                    "$ref" : "#/components/schemas/UsageModel"
-                  }
-                }
-              },
-              "description" : "List of API Options"
-            },
-            "404" : {
-              "description" : "Something went wrong. Please consult the error message."
-            }
-          },
-          "summary" : "Usage endpoint\r",
-          "tags" : [ "Usage" ]
-        }
-      },
       "/api/0.2/latest/{latest}" : {
         "get" : {
           "description" : "Retrieves a json of latest entries made in the OpenAtlas database. The number **latest** represents the amount of entities retrieved. **latest** can be any number between and including 1 and 100. The pagination information is alway `null`",
@@ -880,6 +704,8 @@ contents: >-
             "$ref" : "#/components/parameters/showParam"
           }, {
             "$ref" : "#/components/parameters/downloadParam"
+          }, {
+            "$ref" : "#/components/parameters/formatParam"
           } ],
           "responses" : {
             "200" : {
@@ -898,27 +724,6 @@ contents: >-
           },
           "summary" : "Latest endpoint\r",
           "tags" : [ "Entities" ]
-        }
-      },
-      "/api/0.2/node_entities/" : {
-        "get" : {
-          "responses" : {
-            "200" : {
-              "content" : {
-                "application/ld+json" : {
-                  "schema" : {
-                    "$ref" : "#/components/schemas/UsageModel"
-                  }
-                }
-              },
-              "description" : "List of API Options"
-            },
-            "404" : {
-              "description" : "Something went wrong. Please consult the error message."
-            }
-          },
-          "summary" : "Usage endpoint\r",
-          "tags" : [ "Usage" ]
         }
       },
       "/api/0.2/node_entities/{id_}" : {
@@ -954,27 +759,6 @@ contents: >-
           },
           "summary" : "Node endpoint\r",
           "tags" : [ "Nodes" ]
-        }
-      },
-      "/api/0.2/node_entities_all/" : {
-        "get" : {
-          "responses" : {
-            "200" : {
-              "content" : {
-                "application/ld+json" : {
-                  "schema" : {
-                    "$ref" : "#/components/schemas/UsageModel"
-                  }
-                }
-              },
-              "description" : "List of API Options"
-            },
-            "404" : {
-              "description" : "Something went wrong. Please consult the error message."
-            }
-          },
-          "summary" : "Usage endpoint\r",
-          "tags" : [ "Usage" ]
         }
       },
       "/api/0.2/node_entities_all/{id_}" : {
@@ -1110,6 +894,8 @@ contents: >-
             "$ref" : "#/components/parameters/countParam"
           }, {
             "$ref" : "#/components/parameters/downloadParam"
+          }, {
+            "$ref" : "#/components/parameters/formatParam"
           } ],
           "responses" : {
             "200" : {
@@ -1128,27 +914,6 @@ contents: >-
           },
           "summary" : "Query endpoint\r",
           "tags" : [ "Entities" ]
-        }
-      },
-      "/api/0.2/subunit/" : {
-        "get" : {
-          "responses" : {
-            "200" : {
-              "content" : {
-                "application/ld+json" : {
-                  "schema" : {
-                    "$ref" : "#/components/schemas/UsageModel"
-                  }
-                }
-              },
-              "description" : "List of API Options"
-            },
-            "404" : {
-              "description" : "Something went wrong. Please consult the error message."
-            }
-          },
-          "summary" : "Usage endpoint\r",
-          "tags" : [ "Usage" ]
         }
       },
       "/api/0.2/subunit/{id_}" : {
@@ -1186,27 +951,6 @@ contents: >-
           "tags" : [ "Nodes" ]
         }
       },
-      "/api/0.2/subunit_hierarchy/" : {
-        "get" : {
-          "responses" : {
-            "200" : {
-              "content" : {
-                "application/ld+json" : {
-                  "schema" : {
-                    "$ref" : "#/components/schemas/UsageModel"
-                  }
-                }
-              },
-              "description" : "List of API Options"
-            },
-            "404" : {
-              "description" : "Something went wrong. Please consult the error message."
-            }
-          },
-          "summary" : "Usage endpoint\r",
-          "tags" : [ "Usage" ]
-        }
-      },
       "/api/0.2/subunit_hierarchy/{id_}" : {
         "get" : {
           "description" : "Todo",
@@ -1242,27 +986,6 @@ contents: >-
           "tags" : [ "Nodes" ]
         }
       },
-      "/api/0.2/system_class/" : {
-        "get" : {
-          "responses" : {
-            "200" : {
-              "content" : {
-                "application/ld+json" : {
-                  "schema" : {
-                    "$ref" : "#/components/schemas/UsageModel"
-                  }
-                }
-              },
-              "description" : "List of API Options"
-            },
-            "404" : {
-              "description" : "Something went wrong. Please consult the error message."
-            }
-          },
-          "summary" : "Usage endpoint\r",
-          "tags" : [ "Usage" ]
-        }
-      },
       "/api/0.2/system_class/{system_class}" : {
         "get" : {
           "description" : "Retrieves a json with a list of entities based on their OpenAtlas system class. Available categories are **acquisition**, **activity**, **actor_appellation**, **administrative_unit**, **appellation**, **artifact**, **bibliography**, **edition**, **external_reference**, **feature**, **file**, **find**, **group**, **human_remains**, **move**, **object_location**, **person**, **place**, **source**, **reference_system**, **stratigraphic_unit**, **source_translation**, **type**,  The result can also be filtered, ordered and manipulated through different parameters.  By default results are orderd alphabetically and 20 entities are shown.",
@@ -1293,6 +1016,8 @@ contents: >-
             "$ref" : "#/components/parameters/countParam"
           }, {
             "$ref" : "#/components/parameters/downloadParam"
+          }, {
+            "$ref" : "#/components/parameters/formatParam"
           } ],
           "responses" : {
             "200" : {
@@ -1342,6 +1067,8 @@ contents: >-
             "$ref" : "#/components/parameters/countParam"
           }, {
             "$ref" : "#/components/parameters/downloadParam"
+          }, {
+            "$ref" : "#/components/parameters/formatParam"
           } ],
           "responses" : {
             "200" : {
@@ -1391,6 +1118,8 @@ contents: >-
             "$ref" : "#/components/parameters/countParam"
           }, {
             "$ref" : "#/components/parameters/downloadParam"
+          }, {
+            "$ref" : "#/components/parameters/formatParam"
           } ],
           "responses" : {
             "200" : {
