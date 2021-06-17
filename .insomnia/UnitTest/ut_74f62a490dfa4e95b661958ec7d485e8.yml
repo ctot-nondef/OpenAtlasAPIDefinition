@@ -1,0 +1,24 @@
+_id: ut_74f62a490dfa4e95b661958ec7d485e8
+type: UnitTest
+parentId: uts_1a4d0b67e21649299fdbf63af548f8b8
+modified: 1623945249069
+created: 1623942249084
+requestId: req_wrk_67289a28569c441eb8bf275ffbd0685e3db40e75
+name: ENTITIES-code
+code: |+
+  const response1 = await insomnia.send();
+  const body = JSON.parse(response1.data);
+
+  expect(body).to.be.an("object");
+  expect(body).to.have.property("pagination");
+  expect(body.pagination).to.have.property("entities");
+  expect(body.pagination).to.have.property("entitiesPerPage");
+  expect(body.pagination).to.have.property("index");
+  expect(body.pagination).to.have.property("totalPages");
+  expect(body.pagination.index).to.be.an("array");
+
+  expect(body).to.have.property("results");
+  expect(body.results).to.be.an("array");
+  expect(body.results.length).to.equal(10);
+
+

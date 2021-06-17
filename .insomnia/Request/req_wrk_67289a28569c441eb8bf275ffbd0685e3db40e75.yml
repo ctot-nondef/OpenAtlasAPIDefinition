@@ -1,44 +1,54 @@
 _id: req_wrk_67289a28569c441eb8bf275ffbd0685e3db40e75
 type: Request
 parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685ef7638a26
-modified: 1623939984564
+modified: 1623942864918
 created: 1623939984564
-url: "{{ base_url }}/api/0.2/code/{{ code }}"
+url: "{{ base_url }}/api/0.2/code/{{ _.code }}"
 name: "Code endpoint\r"
 description: ""
 method: GET
 body: {}
 parameters:
   - name: limit
-    disabled: true
-    value: "0"
+    disabled: false
+    value: "10"
+    id: pair_dd98ca2d6f604fd899a1811ebec41472
   - name: column
-    disabled: true
-    value: string
+    disabled: false
+    value: name
+    id: pair_510cf64f64044804b2bd44aaa704ce0a
   - name: sort
-    disabled: true
-    value: string
+    disabled: false
+    value: asc
+    id: pair_f439fd66a8ef47b29f0230c6954188e0
   - name: filter
     disabled: true
     value: string
+    id: pair_913c447c2024492fa37766e099bf4dc1
   - name: first
     disabled: true
     value: "0"
+    id: pair_ec2fbcb771324fb1a57f5fc727bb80f9
   - name: last
     disabled: true
     value: "0"
+    id: pair_a891225c03f644d692deef9c8adf9f5c
   - name: show
     disabled: true
     value: string
+    id: pair_40f97925bbf14ed4be8c2a8ce2530004
   - name: count
     disabled: true
     value: "true"
+    id: pair_653186a08e194db0b8be83eeb2e8e64e
   - name: download
     disabled: true
     value: "true"
+    id: pair_810fd9ca3f87463c94a62338c2508178
   - name: format
-    disabled: true
-    value: string
+    disabled: false
+    value: linked_places
+    id: pair_91ce682770a54483b759550573e69a74
 headers: []
 authentication: {}
 metaSortKey: -1623939984564

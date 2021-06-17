@@ -1,9 +1,9 @@
 _id: req_wrk_67289a28569c441eb8bf275ffbd0685ead14c870
 type: Request
 parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685ef7638a26
-modified: 1623939984559
+modified: 1623942670613
 created: 1623939984559
-url: "{{ base_url }}/api/0.2/entity/{{ id_ }}"
+url: "{{ base_url }}/api/0.2/entity/{{ _.id_ }}"
 name: "Entity endpoint\r"
 description: ""
 method: GET
@@ -12,15 +12,19 @@ parameters:
   - name: show
     disabled: true
     value: string
+    id: pair_29fe4d2c12be4ff2ba4f0dbc89fda67f
   - name: download
     disabled: true
     value: "true"
+    id: pair_b2442acc5fbf4207ace39b1acde0f21e
   - name: export
     disabled: true
     value: string
+    id: pair_a27732d27f604964bb95e3302f72d043
   - name: format
     disabled: true
     value: string
+    id: pair_e9e3d9b7877b44cfafba4e6cdd2919b2
 headers: []
 authentication: {}
 metaSortKey: -1623939984559
