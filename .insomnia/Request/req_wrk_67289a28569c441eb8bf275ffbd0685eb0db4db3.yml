@@ -1,0 +1,51 @@
+_id: req_wrk_67289a28569c441eb8bf275ffbd0685eb0db4db3
+type: Request
+parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685ef7638a26
+modified: 1623939984528
+created: 1623939984528
+url: "{{ base_url }}/api/0.2/system_class/{{ system_class }}"
+name: "System Class endpoint\r"
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: limit
+    disabled: true
+    value: "0"
+  - name: column
+    disabled: true
+    value: string
+  - name: sort
+    disabled: true
+    value: string
+  - name: filter
+    disabled: true
+    value: string
+  - name: first
+    disabled: true
+    value: "0"
+  - name: last
+    disabled: true
+    value: "0"
+  - name: show
+    disabled: true
+    value: string
+  - name: count
+    disabled: true
+    value: "true"
+  - name: download
+    disabled: true
+    value: "true"
+  - name: format
+    disabled: true
+    value: string
+headers: []
+authentication: {}
+metaSortKey: -1623939984528
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

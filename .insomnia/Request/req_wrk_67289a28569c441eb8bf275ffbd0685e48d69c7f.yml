@@ -1,0 +1,51 @@
+_id: req_wrk_67289a28569c441eb8bf275ffbd0685e48d69c7f
+type: Request
+parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685ef7638a26
+modified: 1623939984523
+created: 1623939984523
+url: "{{ base_url }}/api/0.2/type_entities/{{ id_ }}"
+name: "Type Entities Endpoint\r"
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: limit
+    disabled: true
+    value: "0"
+  - name: column
+    disabled: true
+    value: string
+  - name: sort
+    disabled: true
+    value: string
+  - name: filter
+    disabled: true
+    value: string
+  - name: first
+    disabled: true
+    value: "0"
+  - name: last
+    disabled: true
+    value: "0"
+  - name: show
+    disabled: true
+    value: string
+  - name: count
+    disabled: true
+    value: "true"
+  - name: download
+    disabled: true
+    value: "true"
+  - name: format
+    disabled: true
+    value: string
+headers: []
+authentication: {}
+metaSortKey: -1623939984523
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

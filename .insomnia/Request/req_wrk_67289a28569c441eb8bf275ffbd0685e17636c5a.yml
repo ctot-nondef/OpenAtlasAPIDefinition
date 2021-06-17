@@ -1,0 +1,27 @@
+_id: req_wrk_67289a28569c441eb8bf275ffbd0685e17636c5a
+type: Request
+parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685e9e325452
+modified: 1623939984537
+created: 1623939984537
+url: "{{ base_url }}/api/0.2/subunit/{{ id_ }}"
+name: "Node endpoint\r"
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: count
+    disabled: true
+    value: "true"
+  - name: download
+    disabled: true
+    value: "true"
+headers: []
+authentication: {}
+metaSortKey: -1623939984537
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

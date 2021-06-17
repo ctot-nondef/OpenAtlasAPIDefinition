@@ -1,0 +1,16 @@
+_id: ut_7bdad6c3e7924010bbbc93ca8ef8596f
+type: UnitTest
+parentId: uts_1a4d0b67e21649299fdbf63af548f8b8
+modified: 1623939199604
+created: 1623939085897
+requestId: req_wrk_67289a28569c441eb8bf275ffbd0685e67921c94
+name: CONTENT-content
+code: |-
+  const response1 = await insomnia.send();
+  const body = JSON.parse(response1.data);
+
+  expect(body).to.be.an("object");
+  expect(body).to.have.property("contact");
+  expect(body).to.have.property("intro");
+  expect(body).to.have.property("legalNotice");
+  expect(body).to.have.property("siteName");

@@ -1,0 +1,16 @@
+_id: ut_9dbe4c5d4635474fb04e967bb95a5721
+type: UnitTest
+parentId: uts_1a4d0b67e21649299fdbf63af548f8b8
+modified: 1623939343675
+created: 1623939286653
+requestId: req_wrk_67289a28569c441eb8bf275ffbd0685e14fe5ec8
+name: CONTENT-overview_count
+code: |-
+  const response1 = await insomnia.send();
+  const body = JSON.parse(response1.data);
+  const item = body[0];
+
+  expect(body).to.be.an("array");
+  expect(item).to.be.an("object");
+  expect(item).to.have.property("systemClass");
+  expect(item).to.have.property("count");

@@ -1,0 +1,27 @@
+_id: req_wrk_67289a28569c441eb8bf275ffbd0685e67921c94
+type: Request
+parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685e4f9be057
+modified: 1623939984561
+created: 1623939984561
+url: "{{ base_url }}/api/0.2/content/"
+name: "Content endpoint\r"
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: language
+    disabled: true
+    value: string
+  - name: download
+    disabled: true
+    value: "true"
+headers: []
+authentication: {}
+metaSortKey: -1623939984561
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

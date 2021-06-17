@@ -1,0 +1,21 @@
+_id: req_wrk_67289a28569c441eb8bf275ffbd0685e14fe5ec8
+type: Request
+parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685e4f9be057
+modified: 1623939984544
+created: 1623939984544
+url: "{{ base_url }}/api/0.2/overview_count/"
+name: "Overview Count endpoint\r"
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1623939984544
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

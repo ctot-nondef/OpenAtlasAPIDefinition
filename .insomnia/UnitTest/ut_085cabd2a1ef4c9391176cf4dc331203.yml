@@ -1,0 +1,18 @@
+_id: ut_085cabd2a1ef4c9391176cf4dc331203
+type: UnitTest
+parentId: uts_1a4d0b67e21649299fdbf63af548f8b8
+modified: 1623939018079
+created: 1623927098952
+requestId: req_wrk_67289a28569c441eb8bf275ffbd0685e625ea2bd
+name: CONTENT-classes
+code: |-
+  const response1 = await insomnia.send();
+  const body = JSON.parse(response1.data);
+  const item = body[0];
+
+  expect(body).to.be.an("array");
+  expect(item).to.be.an("object");
+  expect(item).to.have.property("systemClass");
+  expect(item).to.have.property("crmClass");
+  expect(item).to.have.property("view");
+  expect(item).to.have.property("icon");
