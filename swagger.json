@@ -67,7 +67,7 @@
       "geometryParam" : {
         "description" : "Select geometry types.",
         "in" : "query",
-        "name" : "format",
+        "name" : "geometry",
         "schema" : {
           "enum" : [ "gisAll", "gisPointAll", "gisPointSupers", "gisPointSubs", "gisPointSibling", "gisLineAll", "gisPolygonAll" ],
           "type" : "string"
