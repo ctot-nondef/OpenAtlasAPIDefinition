@@ -1,9 +1,9 @@
 _id: req_wrk_67289a28569c441eb8bf275ffbd0685e3db40e75
 type: Request
 parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685ef7638a26
-modified: 1623942864918
+modified: 1624271028278
 created: 1623939984564
-url: "{{ base_url }}/api/0.2/code/{{ _.code }}"
+url: "{{ base_url }}/api/0.2/code/{{ code }}"
 name: "Code endpoint\r"
 description: ""
 method: GET
@@ -12,43 +12,43 @@ parameters:
   - name: limit
     disabled: false
     value: "10"
-    id: pair_dd98ca2d6f604fd899a1811ebec41472
+    id: pair_ce00f7a39385462b8df1d13589116f39
   - name: column
-    disabled: false
-    value: name
-    id: pair_510cf64f64044804b2bd44aaa704ce0a
+    disabled: true
+    value: string
+    id: pair_c2e0fb1b59c44b6f9a6ccbab1930f72a
   - name: sort
-    disabled: false
-    value: asc
-    id: pair_f439fd66a8ef47b29f0230c6954188e0
+    disabled: true
+    value: string
+    id: pair_24230246181b4b60a91b86a61d94b56f
   - name: filter
     disabled: true
     value: string
-    id: pair_913c447c2024492fa37766e099bf4dc1
+    id: pair_fd1a86a69d204edebbd7ce7ae71e5c05
   - name: first
     disabled: true
     value: "0"
-    id: pair_ec2fbcb771324fb1a57f5fc727bb80f9
+    id: pair_ba76b84192eb4c8cb5374a9a3d43eb03
   - name: last
     disabled: true
     value: "0"
-    id: pair_a891225c03f644d692deef9c8adf9f5c
+    id: pair_42ff0d4bb5a242a4b27b82442a10bfa1
   - name: show
     disabled: true
     value: string
-    id: pair_40f97925bbf14ed4be8c2a8ce2530004
+    id: pair_1e2f36030f74414baae06ade6118fcec
   - name: count
     disabled: true
     value: "true"
-    id: pair_653186a08e194db0b8be83eeb2e8e64e
+    id: pair_3804368adf7f41ef9dbcfd7f72751b75
   - name: download
     disabled: true
     value: "true"
-    id: pair_810fd9ca3f87463c94a62338c2508178
+    id: pair_5f25cb96dca746f2a5c614a024a75bdd
   - name: format
-    disabled: false
-    value: linked_places
-    id: pair_91ce682770a54483b759550573e69a74
+    disabled: true
+    value: string
+    id: pair_20c03848782f41d882368054c51d8e47
 headers: []
 authentication: {}
 metaSortKey: -1623939984564

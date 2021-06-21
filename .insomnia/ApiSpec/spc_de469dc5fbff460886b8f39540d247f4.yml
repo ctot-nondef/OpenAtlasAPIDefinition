@@ -1,7 +1,7 @@
 _id: spc_de469dc5fbff460886b8f39540d247f4
 type: ApiSpec
 parentId: wrk_67289a28569c441eb8bf275ffbd0685e
-modified: 1623939984589
+modified: 1624270879712
 created: 1623918812846
 fileName: OpenAtlas API 0.2-develop
 contents: >-
@@ -68,6 +68,15 @@ contents: >-
           "name" : "format",
           "schema" : {
             "enum" : [ "linked_places", "geojson" ],
+            "type" : "string"
+          }
+        },
+        "geometryParam" : {
+          "description" : "Select geometry types.",
+          "in" : "query",
+          "name" : "geometry",
+          "schema" : {
+            "enum" : [ "gisAll", "gisPointAll", "gisPointSupers", "gisPointSubs", "gisPointSibling", "gisLineAll", "gisPolygonAll" ],
             "type" : "string"
           }
         },
@@ -244,6 +253,17 @@ contents: >-
             }
           },
           "required" : [ "@id", "geometry", "type" ],
+          "type" : "object"
+        },
+        "GeometryModel" : {
+          "properties" : {
+            "geometries" : {
+              "items" : {
+                "$ref" : "#/components/schemas/TypeModel"
+              },
+              "type" : "array"
+            }
+          },
           "type" : "object"
         },
         "LatestModel" : {
@@ -687,6 +707,35 @@ contents: >-
           },
           "summary" : "Entity endpoint\r",
           "tags" : [ "Entities" ]
+        }
+      },
+      "/api/0.2/geometric_entities/" : {
+        "get" : {
+          "description" : "Retrieves a list of all selected geometries in the database in a standard Geojson format. This is implimentended for map usage.",
+          "parameters" : [ {
+            "$ref" : "#/components/parameters/countParam"
+          }, {
+            "$ref" : "#/components/parameters/downloadParam"
+          }, {
+            "$ref" : "#/components/parameters/geometryParam"
+          } ],
+          "responses" : {
+            "200" : {
+              "content" : {
+                "application/ld+json" : {
+                  "schema" : {
+                    "$ref" : "#/components/schemas/GeometryModel"
+                  }
+                }
+              },
+              "description" : "Only places with geometries will retrieved."
+            },
+            "404" : {
+              "description" : "Something went wrong. Please consult the error message."
+            }
+          },
+          "summary" : "Geometries Endpoint\r",
+          "tags" : [ "Content" ]
         }
       },
       "/api/0.2/latest/{latest}" : {
