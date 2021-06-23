@@ -1,10 +1,10 @@
 _id: req_wrk_67289a28569c441eb8bf275ffbd0685e85e07663
 type: Request
 parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685e9e325452
-modified: 1624270831290
-created: 1623939984512
+modified: 1624449668848
+created: 1623918812584
 url: "{{ base_url }}/api/0.2/type_tree/"
-name: "Type Tree endpoint\r"
+name: Type Tree endpoint
 description: ""
 method: GET
 body: {}
@@ -12,9 +12,10 @@ parameters:
   - name: download
     disabled: true
     value: "true"
+    id: pair_99daa67a6dd34d1aaae7d228a104a966
 headers: []
 authentication: {}
-metaSortKey: -1623939984512
+metaSortKey: -1623918812584
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

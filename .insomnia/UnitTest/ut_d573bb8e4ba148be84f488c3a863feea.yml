@@ -1,0 +1,12 @@
+_id: ut_d573bb8e4ba148be84f488c3a863feea
+type: UnitTest
+parentId: uts_1a4d0b67e21649299fdbf63af548f8b8
+modified: 1624447867224
+created: 1624441986784
+requestId: req_wrk_67289a28569c441eb8bf275ffbd0685ead14c870
+name: ENTITIES-id
+code: |-
+  const response1 = await insomnia.send();
+  const body = JSON.parse(response1.data);
+
+  expect(body).to.be.an("object");

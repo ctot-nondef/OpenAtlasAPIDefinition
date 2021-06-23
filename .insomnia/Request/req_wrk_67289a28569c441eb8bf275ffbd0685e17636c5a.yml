@@ -1,10 +1,10 @@
 _id: req_wrk_67289a28569c441eb8bf275ffbd0685e17636c5a
 type: Request
 parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685e9e325452
-modified: 1624270831392
-created: 1623939984537
-url: "{{ base_url }}/api/0.2/subunit/{{ id_ }}"
-name: "Node endpoint\r"
+modified: 1624449641893
+created: 1623918812626
+url: "{{ base_url }}/api/0.2/subunit/{{ _.nodeid }}"
+name: subunit
 description: ""
 method: GET
 body: {}
@@ -12,12 +12,14 @@ parameters:
   - name: count
     disabled: true
     value: "true"
+    id: pair_782e101d22334a84993af5602fde858e
   - name: download
     disabled: true
     value: "true"
+    id: pair_bf47515f57d94d569ac1890213ff2ace
 headers: []
 authentication: {}
-metaSortKey: -1623939984537
+metaSortKey: -1623918812626
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

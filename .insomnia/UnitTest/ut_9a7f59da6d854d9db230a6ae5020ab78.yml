@@ -1,11 +1,11 @@
-_id: ut_74f62a490dfa4e95b661958ec7d485e8
+_id: ut_9a7f59da6d854d9db230a6ae5020ab78
 type: UnitTest
 parentId: uts_1a4d0b67e21649299fdbf63af548f8b8
-modified: 1624442860368
-created: 1623942249084
-requestId: req_wrk_67289a28569c441eb8bf275ffbd0685e3db40e75
-name: ENTITIES-code
-code: |+
+modified: 1624448094774
+created: 1624448070675
+requestId: req_wrk_67289a28569c441eb8bf275ffbd0685e48d69c7f
+name: ENTITIES-type_entities
+code: |-
   const response1 = await insomnia.send();
   const body = JSON.parse(response1.data);
 
@@ -20,5 +20,3 @@ code: |+
   expect(body).to.have.property("results");
   expect(body.results).to.be.an("array");
   expect(body.results.length).to.equal(10);
-
-

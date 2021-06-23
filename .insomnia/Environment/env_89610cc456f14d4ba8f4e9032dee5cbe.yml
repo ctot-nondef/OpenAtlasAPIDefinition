@@ -1,0 +1,30 @@
+_id: env_89610cc456f14d4ba8f4e9032dee5cbe
+type: Environment
+parentId: env_5af3e299172f25cee3c2afda6f3ae0bbde84ca90
+modified: 1624448701740
+created: 1624356507614
+name: OpenAtlas demo
+data:
+  scheme: https
+  base_path: ""
+  host: demo.openatlas.eu
+  code: actor
+  systemclass: person
+  pagesize: 10
+  entityid: 6512
+  typeid: 765
+  nodeid: 87
+dataPropertyOrder:
+  "&":
+    - scheme
+    - base_path
+    - host
+    - code
+    - systemclass
+    - pagesize
+    - entityid
+    - typeid
+    - nodeid
+color: null
+isPrivate: false
+metaSortKey: 1623939984627

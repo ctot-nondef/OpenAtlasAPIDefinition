@@ -1,47 +1,57 @@
 _id: req_wrk_67289a28569c441eb8bf275ffbd0685eb0db4db3
 type: Request
 parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685ef7638a26
-modified: 1624270831365
-created: 1623939984528
-url: "{{ base_url }}/api/0.2/system_class/{{ system_class }}"
-name: "System Class endpoint\r"
+modified: 1624443466334
+created: 1623918812601
+url: "{{ base_url }}/api/0.2/system_class/{{ _.systemclass }}"
+name: System Class endpoint
 description: ""
 method: GET
 body: {}
 parameters:
   - name: limit
-    disabled: true
-    value: "0"
+    disabled: false
+    value: "{{ _.pagesize }}"
+    id: pair_ff13c92752be4ef8b65057ee760cb7ff
   - name: column
     disabled: true
     value: string
+    id: pair_a5ce003b79b74170a5988f307f680aa7
   - name: sort
     disabled: true
     value: string
+    id: pair_2c06eb3c505f437c9dcf26274170e88b
   - name: filter
     disabled: true
     value: string
+    id: pair_f3fa86a7b0bf40b5a7c231a6f2b39f34
   - name: first
     disabled: true
     value: "0"
+    id: pair_ec743beb8d954c4582a887a65b7eb3b8
   - name: last
     disabled: true
     value: "0"
+    id: pair_45daf808444e4786a78edb535c201aea
   - name: show
     disabled: true
     value: string
+    id: pair_f638acb7e1254c838b8a2bcd93f5b430
   - name: count
     disabled: true
     value: "true"
+    id: pair_5bbbac481b0740beaa9c0314e85b03b5
   - name: download
     disabled: true
     value: "true"
+    id: pair_5fb37ce471c147b1865ad21bb02e5da6
   - name: format
     disabled: true
     value: string
+    id: pair_ddd8ec6662154efea1552e46c788e1bc
 headers: []
 authentication: {}
-metaSortKey: -1623939984528
+metaSortKey: -1623918812601
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

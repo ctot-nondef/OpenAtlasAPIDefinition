@@ -1,20 +1,14 @@
 _id: env_env_5af3e299172f25cee3c2afda6f3ae0bbde84ca90_sub
 type: Environment
 parentId: env_5af3e299172f25cee3c2afda6f3ae0bbde84ca90
-modified: 1624270997304
-created: 1623939984577
+modified: 1624436336809
+created: 1623918812822
 name: OpenAPI env
 data:
   scheme: https
   base_path: ""
   host: demo-dev.openatlas.eu
-  code: actor
-dataPropertyOrder:
-  "&":
-    - scheme
-    - base_path
-    - host
-    - code
+dataPropertyOrder: null
 color: null
 isPrivate: false
-metaSortKey: 1623939984577
+metaSortKey: 1623918812822

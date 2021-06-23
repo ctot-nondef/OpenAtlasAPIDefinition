@@ -1,10 +1,10 @@
 _id: req_wrk_67289a28569c441eb8bf275ffbd0685ef44f3cc1
 type: Request
 parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685e9e325452
-modified: 1624270831907
-created: 1623939984546
+modified: 1624449632229
+created: 1623918812646
 url: "{{ base_url }}/api/0.2/node_overview/"
-name: "Node endpoint\r"
+name: node_overview
 description: ""
 method: GET
 body: {}
@@ -12,9 +12,10 @@ parameters:
   - name: download
     disabled: true
     value: "true"
+    id: pair_7fff4d94580c40d1ad16ccb8868ed0a7
 headers: []
 authentication: {}
-metaSortKey: -1623939984546
+metaSortKey: -1623918812646
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

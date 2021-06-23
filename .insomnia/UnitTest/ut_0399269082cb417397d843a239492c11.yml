@@ -1,0 +1,15 @@
+_id: ut_0399269082cb417397d843a239492c11
+type: UnitTest
+parentId: uts_1a4d0b67e21649299fdbf63af548f8b8
+modified: 1624450194915
+created: 1624450032597
+requestId: req_wrk_67289a28569c441eb8bf275ffbd0685e86735ee7
+name: NODE-entities_all
+code: |-
+  const response1 = await insomnia.send();
+  const body = JSON.parse(response1.data);
+
+  expect(body).to.be.an("object");
+  expect(body).to.have.property("nodes");
+
+  expect(body.nodes).to.be.an("array");

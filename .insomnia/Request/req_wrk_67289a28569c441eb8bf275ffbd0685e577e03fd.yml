@@ -1,10 +1,10 @@
 _id: req_wrk_67289a28569c441eb8bf275ffbd0685e577e03fd
 type: Request
 parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685ef7638a26
-modified: 1624270832006
-created: 1623939984557
-url: "{{ base_url }}/api/0.2/latest/{{ latest }}"
-name: "Latest endpoint\r"
+modified: 1624443446084
+created: 1623918812667
+url: "{{ base_url }}/api/0.2/latest/{{ _.pagesize }}"
+name: Latest endpoint
 description: ""
 method: GET
 body: {}
@@ -12,15 +12,18 @@ parameters:
   - name: show
     disabled: true
     value: string
+    id: pair_67f6e36d877647b2a66a6c4e6e5b3e28
   - name: download
     disabled: true
     value: "true"
+    id: pair_849144b8b05d4aa299e19322963957f0
   - name: format
     disabled: true
     value: string
+    id: pair_7bd73ac9c30b423295fab53c0fcf0b78
 headers: []
 authentication: {}
-metaSortKey: -1623939984557
+metaSortKey: -1623918812667
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
