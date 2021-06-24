@@ -1,0 +1,10 @@
+_id: ut_1f4f02a9831a4dd7bb66619d966d17d4
+type: UnitTest
+parentId: uts_1a4d0b67e21649299fdbf63af548f8b8
+modified: 1624544744494
+created: 1624544736345
+requestId: req_wrk_67289a28569c441eb8bf275ffbd0685ee66b13c6
+name: CONTENT-geometric_entities
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);
