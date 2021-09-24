@@ -1,9 +1,9 @@
 _id: req_wrk_67289a28569c441eb8bf275ffbd0685ed1cc7abf
 type: Request
 parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685e9e325452
-modified: 1624449663084
+modified: 1632498484960
 created: 1623918812615
-url: "{{ base_url }}/api/0.2/subunit_hierarchy/{{ id_ }}"
+url: "{{ base_url }}/api/0.2/subunit_hierarchy/{{ _.nodeid }}"
 name: subunit_hierarchy
 description: ""
 method: GET

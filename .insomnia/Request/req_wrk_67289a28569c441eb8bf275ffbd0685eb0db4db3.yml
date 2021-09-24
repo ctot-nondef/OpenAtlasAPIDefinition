@@ -1,7 +1,7 @@
 _id: req_wrk_67289a28569c441eb8bf275ffbd0685eb0db4db3
 type: Request
 parentId: fld_wrk_67289a28569c441eb8bf275ffbd0685ef7638a26
-modified: 1624451940418
+modified: 1632498423021
 created: 1623918812601
 url: "{{ base_url }}/api/0.2/system_class/{{ _.systemclass }}"
 name: System Class endpoint
